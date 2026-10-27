@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thomas — Timeline</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<div id="app">
+<div id="mon"><canvas id="cv"></canvas><div id="hud"><span id="rec">REC · PROGRAM</span><span id="sec"></span></div><div id="panel"></div><div id="flash"></div><div id="toast"></div><div id="bug"></div></div>
+<div id="bar"><button id="b0" title="First frame"></button><button id="b1" title="Previous frame"></button><button id="pp" title="Play or pause"></button><button id="b2" title="Next frame"></button><button id="b3" title="Last frame"></button><button id="mu" title="Mute"></button><input id="vol" type="range" min="0" max="100" value="80" aria-label="Volume"><span id="tc">00:00:00</span></div>
+<div id="tl"><div id="lbl"></div><div id="strip"></div><div id="ph"></div></div>
+</div>
+<div id="fl" style="position:fixed;inset:0;background:#eafff2;opacity:0;pointer-events:none;z-index:40"></div><div id="emg"><div class="estr top"></div><div class="estr bot"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="ectr"><div class="etx">CRITICAL BUG DETECTED</div><div class="esub"></div></div></div><div id="intro" class="t3"><canvas id="c3"></canvas><div id="pw"><img id="pf" src="images/off-state.jpg" alt=""><img id="pg" src="images/glow.jpg" alt=""><canvas id="pr" width="640" height="540"></canvas><img id="ps" src="images/symbol.jpg" alt=""></div><h3>HOLD TO POWER ON</h3><div id="rig"><svg id="card" viewBox="0 0 100 130"><path d="M8 4h62l22 22v100H8z" fill="#2a2f45" stroke="#ff4d5e" stroke-width="3"/><rect x="18" y="14" width="10" height="16" fill="#ffc857"/><rect x="34" y="14" width="10" height="16" fill="#ffc857"/><rect x="50" y="14" width="10" height="16" fill="#ffc857"/><text x="50" y="86" fill="#fff" font-size="13" text-anchor="middle" font-family="monospace">THOMAS</text><text x="50" y="104" fill="#8b91a5" font-size="9" text-anchor="middle" font-family="monospace">128GB</text></svg><div id="slot">CARD READER</div></div><div id="imp"></div><div id="pb"><i></i></div><small id="ih"></small></div>
+<script src="script.js"></script></body></html>
