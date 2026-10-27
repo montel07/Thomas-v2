@@ -65,7 +65,7 @@ addEventListener('wheel',e=>{if(!live)return;au();lastS=performance.now();playin
 addEventListener('keydown',e=>{if(!live)return;au();if(e.code==='Space'){e.preventDefault();$('pp').click()}if(e.code==='ArrowRight')go(t+2);if(e.code==='ArrowLeft')go(t-2)});
 /* intro: image button */
 (function(){const I=$('intro'),pw=$('pw'),pg=$('pg'),ps=$('ps'),cn=$('pr'),c=cn.getContext('2d'),mc=document.createElement('canvas');mc.width=640;mc.height=540;const m=mc.getContext('2d'),ri=new Image(),P={"cx": 320.4102564102564, "cy": 270.35897435897436, "a": 203.07692307692307, "b": 154.66666666666666, "r": 182.52220432700634, "lw": 40.98586999962153};let hold=false,prog=0,pd=-1,st=0,w=0,sc=1,started=false,ok=false,lt=performance.now(),ho,hgn;
-ri.onload=()=>{ok=true;pd=-1};ri.src='images/ring.jpg';
+ri.onload=()=>{ok=true;pd=-1};ri.src='ring.jpg';
 function draw(p){c.clearRect(0,0,640,540);if(p<.003||!ok)return;m.clearRect(0,0,640,540);m.save();m.translate(P.cx,P.cy);m.scale(1,P.b/P.a);m.lineCap='round';m.lineWidth=P.lw;m.strokeStyle='#fff';m.beginPath();m.arc(0,0,P.r,-Math.PI/2,-Math.PI/2+(p>=1?6.2832:p*6.2832));m.stroke();m.restore();c.globalCompositeOperation='source-over';c.drawImage(mc,0,0);c.globalCompositeOperation='source-in';c.drawImage(ri,0,0);c.globalCompositeOperation='source-over'}
 function hum(){if(!AC||!M||ho)return;ho=AC.createOscillator();ho.type='sine';ho.frequency.value=55;hgn=AC.createGain();hgn.gain.value=0;ho.connect(hgn);hgn.connect(M);ho.start()}
 pw.addEventListener('contextmenu',e=>e.preventDefault());
