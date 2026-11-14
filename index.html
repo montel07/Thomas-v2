@@ -1,12 +1,144 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
+<html lang="en" data-mood="dawn">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Thomas v2</title>
-<link rel="stylesheet" href="style.css"></head><body>
-<div id="app">
-<div id="mon"><canvas id="cv"></canvas><div id="hud"><span id="rec">REC · PROGRAM</span><span id="sec"></span></div><div id="panel"></div><div id="flash"></div><div id="toast"></div><div id="bug"></div></div>
-<div id="bar"><button id="b0" title="First frame"></button><button id="b1" title="Previous frame"></button><button id="pp" title="Play or pause"></button><button id="b2" title="Next frame"></button><button id="b3" title="Last frame"></button><button id="mu" title="Mute"></button><input id="vol" type="range" min="0" max="100" value="80" aria-label="Volume"><span id="tc">00:00:00</span></div>
-<div id="tl"><div id="lbl"></div><div id="strip"></div><div id="ph"></div></div>
+<title>Thomas — Creative Repertoire</title>
+<meta name="description" content="Portfolio of Thomas: game testing, video editing, writing and web building.">
+<meta property="og:title" content="Thomas | Portfolio">
+<meta property="og:description" content="Game tester, video editor, writer and web builder.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+<svg class="sprite" aria-hidden="true">
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></symbol>
+  <symbol id="i-about" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></symbol>
+  <symbol id="i-skills" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="i-work" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M3 13h18"/></symbol>
+  <symbol id="i-videos" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z"/></symbol>
+  <symbol id="i-writing" viewBox="0 0 24 24"><path d="M4 20l1-4L16.5 4.5a2.1 2.1 0 013 3L8 19z"/><path d="M14 7l3 3"/></symbol>
+  <symbol id="i-contact" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-resume" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 6v-3.9a3.4 3.4 0 00-.9-2.6c3-.3 6.1-1.5 6.1-6.7a5.2 5.2 0 00-1.4-3.6 4.8 4.8 0 00-.1-3.6S17.5 1.3 15 3a13.2 13.2 0 00-7 0C5.5 1.3 4.3 1.6 4.3 1.6a4.8 4.8 0 00-.1 3.6 5.2 5.2 0 00-1.4 3.6c0 5.2 3.1 6.4 6.1 6.7A3.4 3.4 0 006 18.1V22"/></symbol>
+  <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M14 3v11.1a4.1 4.1 0 11-3.4-4.05"/><path d="M14 3c.4 3.1 2.2 5.1 5.5 5.4"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M4 3h4.5L20 21h-4.5zM20 3L4 21"/></symbol>
+  <symbol id="i-discord" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.078.037c-.211.375-.445.867-.608 1.25a18.27 18.27 0 0 0-5.486 0c-.163-.39-.405-.875-.617-1.25a.077.077 0 0 0-.078-.037A19.74 19.74 0 0 0 3.68 4.37a.07.07 0 0 0-.032.028C.533 8.046-.32 11.58.107 15.064a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.028.078.078 0 0 0 .084-.027c.461-.631.872-1.295 1.226-1.994a.077.077 0 0 0-.042-.106 13.13 13.13 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.197.373.291a.077.077 0 0 1-.007.128c-.598.35-1.225.65-1.873.892a.077.077 0 0 0-.041.106c.36.698.771 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.876 19.876 0 0 0 6.002-3.028.077.077 0 0 0 .031-.055c.5-4.024-.838-7.525-3.548-10.667a.062.062 0 0 0-.031-.028ZM8.02 13.33c-1.183 0-2.157-1.086-2.157-2.42 0-1.333.955-2.42 2.157-2.42 1.212 0 2.176 1.096 2.157 2.42 0 1.334-.955 2.42-2.157 2.42Zm7.96 0c-1.183 0-2.157-1.086-2.157-2.42 0-1.333.955-2.42 2.157-2.42 1.212 0 2.176 1.096 2.157 2.42 0 1.334-.945 2.42-2.157 2.42Z"/></symbol>
+  <symbol id="i-email" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+</svg>
+
+<div class="sky" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="life" aria-hidden="true"></div>
+
+<header class="bar">
+  <strong>Thomas</strong>
+  <time id="clock"></time>
+  <button id="mood" class="bar-btn" aria-label="Change the time of day">
+    <svg class="i m m-dawn" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><g class="rays"><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/></g></svg>
+    <svg class="i m m-day" viewBox="0 0 24 24"><circle class="halo" cx="12" cy="12" r="10" stroke-dasharray="2 3"/><circle class="core" cx="12" cy="12" r="6.5" fill="currentColor" fill-opacity=".3"/></svg>
+    <svg class="i m m-night" viewBox="0 0 24 24"><path class="moon" d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/><path class="star" d="M18 2v3M16.5 3.5h3"/></svg>
+  </button>
+</header>
+
+<main id="desk">
+  <section class="win" id="hello" hidden aria-label="Welcome">
+    <header class="tb"><button class="x" aria-label="Close"></button><h2>Welcome</h2></header>
+    <div class="body hero">
+      <h1 id="hi">Hey, I’m Thomas</h1>
+       <p>I'm a self-taught creative with a bit of a thing for learning new skills. I write, edit videos, build/design things and still currently learning more. I've also had the chance to work with different clients, helping them bring their ideas to life.</p>
+      <p>I’m really just a chill curious guy. Have a look around.</p>
+      <div class="row">
+        <a class="btn" href="https://drive.google.com/file/d/1iApp80vlMgb_aKl1P4xHVwGLdfDQXRIe/view" target="_blank" rel="noopener">View resume</a>
+        <button class="btn ghost" data-open="contact">Contact me</button>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="win" id="skills" hidden aria-label="Skills">
+    <header class="tb"><button class="x" aria-label="Close"></button><h2>What I can do</h2></header>
+    <div class="body">
+      <div class="cards">
+        <article><h3>Game testing</h3><p>QA and beta testing on a game that shipped on Steam, finding what players would trip on.</p></article>
+        <article><h3>Video editing</h3><p>Client edits, Anime music videos, pacing, transitions and visual storytelling. Still learning new tricks along the way.</p></article>
+        <article><h3>Writing</h3><p>I write for clients, including scripts for games.</p></article>
+        <article><h3>Web building</h3><p>Self-taught HTML and CSS, experimenting with interactive ideas and AI-assisted development.</p></article>
+      </div>
+      <ul class="chips">
+        <li>HTML</li><li>CSS</li><li>AI prompting</li><li>QA testing</li><li>Social media management</li><li>Video editing</li><li>Problem solving</li><li>Graphic design</li><li>Writing</li><li>Blender · learning</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="win wide" id="work" hidden aria-label="Work">
+    <header class="tb"><button class="x" aria-label="Close"></button><h2>Things I’ve shipped</h2></header>
+    <div class="body">
+      <div class="shots">
+        <a href="https://word-forge-bug.vercel.app" target="_blank" rel="noopener"><img src="images/work-wordforge.jpg" alt="Word Forge screenshot"><h3>Word Forge</h3><p>My first AI-assisted browser game. A word puzzle built from idea to playable experience.</p><small>Game concept · UI · build</small></a>
+        <a href="https://mon-anymous.vercel.app" target="_blank" rel="noopener"><img src="images/work-monanymous.jpg" alt="Monanymous screenshot"><h3>Monanymous</h3><p>An anonymous feedback project focused on making it easy to share thoughts without attaching a name.</p><small>Web project · interface</small></a>
+        <a href="https://thom-port.vercel.app" target="_blank" rel="noopener"><img src="images/work-portfolio.jpg" alt="My first portfolio screenshot"><h3>My first portfolio</h3><p>An earlier attempt at bringing my different creative interests together in one place.</p><small>Personal project · web</small></a>
+      </div>
+      <p class="note">There are more private client projects that can’t be disclosed.</p>
+    </div>
+  </section>
+
+  <section class="win" id="videos" hidden aria-label="Video edits">
+    <header class="tb"><button class="x" aria-label="Close"></button><h2>Video edits</h2></header>
+    <div class="body center">
+      <svg class="i big"><use href="#i-videos"/></svg>
+      <p>A folder of my client edits, all in one place.</p>
+      <a class="btn" href="https://drive.google.com/drive/folders/16jWVYvdpseFjeU2aP812s5Ce9RezuTRw" target="_blank" rel="noopener">Watch my edits</a>
+    </div>
+  </section>
+
+  <section class="win" id="writing" hidden aria-label="Writing sample">
+    <header class="tb"><button class="x" aria-label="Close"></button><h2>Writing sample</h2></header>
+    <div class="body">
+      <blockquote>
+        <small>Act I, The Weeping Woods · first page of a commissioned game script</small>
+        Rain. The steady percussion of it against old glass.<br><br>
+        You don’t remember falling asleep in the university library. You remember the smell of aged parchment and cold coffee, the amber halo of a single desk lamp, a stack of texts you told yourself you’d read by morning. You remember reaching for the top shelf, fingertips grazing a spine you didn’t recognize, and then warmth. Sudden, violent warmth, as if the book itself had a pulse.<br><br>
+        The world came apart.
+      </blockquote>
+      <a class="btn" href="files/Game-Script-Excerpt.docx" download>Download writing sample</a>
+    </div>
+  </section>
+
+  <section class="win" id="contact" hidden aria-label="Contact">
+    <header class="tb"><button class="x" aria-label="Close"></button><h2>Contact</h2></header>
+    <div class="body chat">
+      <p class="bubble chat-line" data-message="Hey there, what's up?" aria-live="polite"></p>
+      <p class="bubble chat-line" data-message="Thomas, yeah?"></p>
+      <p class="bubble ttb chat-line" data-message="Yep, that's me."></p>
+      <p class="bubble chat-line" data-message="Let's make something."></p>
+      <p class="bubble ttb chat-line" data-message="Sure. What do you have in mind?"></p>
+      <div class="socials" aria-label="Social links">
+        <a href="https://github.com/montel07" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg class="i"><use href="#i-github"/></svg></a>
+        <a href="https://tiktok.com/@re_incarnate" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg class="i"><use href="#i-tiktok"/></svg></a>
+        <a href="https://x.com/hazreith" target="_blank" rel="noopener" aria-label="X" title="X"><svg class="i"><use href="#i-x"/></svg></a>
+        <button type="button" data-copy="reincarnate07" aria-label="Discord" title="Discord"><svg class="i"><use href="#i-discord"/></svg></button>
+        <a href="mailto:otuthomas2005@gmail.com" aria-label="Email Thomas" title="Email Thomas" class="email-button"><svg class="i"><use href="#i-email"/></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<nav class="dock" aria-label="Apps">
+  <button data-open="hello" aria-label="About me" title="About me"><svg class="i"><use href="#i-about"/></svg></button>
+  <button data-open="skills" aria-label="Skills"><svg class="i"><use href="#i-skills"/></svg></button>
+  <button data-open="work" aria-label="Work"><svg class="i"><use href="#i-work"/></svg></button>
+  <button data-open="videos" aria-label="Videos"><svg class="i"><use href="#i-videos"/></svg></button>
+  <button data-open="writing" aria-label="Writing"><svg class="i"><use href="#i-writing"/></svg></button>
+  <button data-open="contact" aria-label="Contact"><svg class="i"><use href="#i-contact"/></svg></button>
+  <a href="https://drive.google.com/file/d/1iApp80vlMgb_aKl1P4xHVwGLdfDQXRIe/view" target="_blank" rel="noopener" aria-label="Resume"><svg class="i"><use href="#i-resume"/></svg></a>
+</nav>
+
+<div id="toast" role="status"></div>
+
+<div id="lock" tabindex="0" role="button" aria-label="Swipe up to open the portfolio">
+  <div class="lk-top"><svg class="i"><use href="#i-lock"/></svg><time id="lk-time"></time></div>
+  <div class="lk-mid"><h1 id="lk-name">Thomas</h1><p>Creative Repertoire</p></div>
+  <div class="lk-bot"><span class="chev"></span><p><span class="desktop-hint">Tap anywhere to explore</span><span class="mobile-hint">Swipe up or tap to explore</span></p><i class="home-bar"></i></div>
 </div>
-<div id="fl" style="position:fixed;inset:0;background:#eafff2;opacity:0;pointer-events:none;z-index:40"></div><div id="emg"><div class="estr top"></div><div class="estr bot"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="ectr"><div class="etx">CRITICAL BUG DETECTED</div><div class="esub"></div></div></div><div id="intro" class="t3"><canvas id="c3"></canvas><div id="pw"><img id="pf" src="off-state.jpg" alt=""><img id="pg" src="glow.jpg" alt=""><canvas id="pr" width="640" height="540"></canvas><img id="ps" src="symbol.jpg" alt=""></div><h3>HOLD TO POWER ON</h3><div id="rig"><svg id="card" viewBox="0 0 100 130"><path d="M8 4h62l22 22v100H8z" fill="#2a2f45" stroke="#ff4d5e" stroke-width="3"/><rect x="18" y="14" width="10" height="16" fill="#ffc857"/><rect x="34" y="14" width="10" height="16" fill="#ffc857"/><rect x="50" y="14" width="10" height="16" fill="#ffc857"/><text x="50" y="86" fill="#fff" font-size="13" text-anchor="middle" font-family="monospace">THOMAS</text><text x="50" y="104" fill="#8b91a5" font-size="9" text-anchor="middle" font-family="monospace">128GB</text></svg><div id="slot">CARD READER</div></div><div id="imp"></div><div id="pb"><i></i></div><small id="ih"></small></div>
-<script src="script.js"></script></body></html>
+<script src="script.js"></script>
+</body>
+</html>
