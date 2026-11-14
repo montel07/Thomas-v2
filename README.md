@@ -1,31 +1,39 @@
 # Portfolio v2
 
-A one-minute portfolio built as a video editing timeline. You power the site on with a physical-style button, then scrub through five scenes on a timeline to learn who I am, what I do and how to reach me.
+A soft, interactive glass desktop for exploring my work. Open a window from the dock, drag it by its title bar on desktop, and change the atmosphere with the mood control.
 
 ## Preview
 
 [Visit Here](https://thom-port-v2.vercel.app)
 
-## How it works
+## Files
 
-1. **Power on.** Press and hold the button for about a second and a half. A green ring fills clockwise around it. Let go early and the ring winds back. When it is full, a flash of light plays and the site switches on like a TV.
-2. **Explore.** Drag, scroll, swipe or use the arrow keys to move along the timeline. Press play to let it run by itself.
-3. **Controls.** The bar above the timeline has first frame, previous frame, play or pause, next frame, last frame, mute and a volume slider.
+- `index.html` — portfolio content and navigation
+- `style.css` — layout, refractive glass styling, colour moods and responsive behaviour
+- `script.js` — windows, dock, clock, notifications and interactive bubbles
+- `images/` — project previews
+- `files/` — downloadable writing sample
 
-The timeline is exactly 60 seconds long and has five scenes of 12 seconds each: Intro, What I do, Projects, In the mix and Contact.
+## Run it
 
-## Features
+Open `index.html` in a modern browser, or serve this folder with any static web host.
 
-- Interactive power-on intro made from a rendered button image with a live progress ring
-- Drag, scroll, touch and keyboard scrubbing on a timeline with a fixed playhead
-- Ambient background music generated in the browser, with mute and volume control
-- Animated text, glowing particles that react to touch and a scene colour that follows the timeline
-- Responsive layout for phones and laptops
-- A hidden easter egg for anyone curious enough to find it
+## Interaction notes
+
+- The bubbles have different touch responses: split, water-like deformation, ripples and sparkles.
+- The glass uses layered highlights and chromatic edge lighting as a broad fallback. Browsers that support SVG displacement filters get additional backdrop bending on focused windows and the dock.
+- Reduced-motion and reduced-transparency preferences are respected.
+- On phones, windows become a single scrollable sheet and the dock adapts to the available width.
+
+## Editing
+
+- **Words and links:** edit the matching `<section class="win">` in `index.html`.
+- **Colours:** edit the mood variables at the top of `style.css`.
+- **New window:** add a window section and a dock control with the matching `data-open` value.
 
 ## Browser support
 
-Works in current versions of Chrome, Edge, Safari and Firefox on desktop and mobile. Sound starts after the first tap or click, because browsers do not allow audio before that.
+Works in current versions of Chrome, Edge, Safari and Firefox on desktop and mobile. 
 
 ## Contact
 
@@ -34,6 +42,3 @@ Works in current versions of Chrome, Edge, Safari and Firefox on desktop and mob
 - X: [@hazreith](https://x.com/hazreith)
 - Discord: reincarnate07
 
-## Credits
-
-Designed and built by Thomas, with AI assistance for the code.
